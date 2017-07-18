@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="闭包闭包的概念，宏观：js中所有的函数都能形成一个闭包 微观：函数里包裹其他的函数，并返回这个函数，就形成闭包（这也是开发中经常用到的思想）  另一种说法，函数体以及函数所处的环境构成的总合体称为闭包 闭包的初级：　function f1(){ 　　　　n=999; 　　　　function f2(){ 　　　　　　alert(n); 　　　　} 　　　　return f2; 　　} 　　var">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/演讲表/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="闭包闭包的概念，宏观：js中所有的函数都能形成一个闭包 微观：函数里包裹其他的函数，并返回这个函数，就形成闭包（这也是开发中经常用到的思想）  另一种说法，函数体以及函数所处的环境构成的总合体称为闭包 闭包的初级：　function f1(){ 　　　　n=999; 　　　　function f2(){ 　　　　　　alert(n); 　　　　} 　　　　return f2; 　　} 　　var">
+<meta property="og:updated_time" content="2017-07-16T08:45:16.745Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="闭包闭包的概念，宏观：js中所有的函数都能形成一个闭包 微观：函数里包裹其他的函数，并返回这个函数，就形成闭包（这也是开发中经常用到的思想）  另一种说法，函数体以及函数所处的环境构成的总合体称为闭包 闭包的初级：　function f1(){ 　　　　n=999; 　　　　function f2(){ 　　　　　　alert(n); 　　　　} 　　　　return f2; 　　} 　　var">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-演讲表" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/18/演讲表/" class="article-date">
+  <time datetime="2017-07-18T14:05:51.974Z" itemprop="datePublished">2017-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><h3 id="闭包的概念，"><a href="#闭包的概念，" class="headerlink" title="闭包的概念，"></a>闭包的概念，</h3><pre><code>宏观：js中所有的函数都能形成一个闭包
+微观：函数里包裹其他的函数，并返回这个函数，就形成闭包（这也是开发中经常用到的思想）
+ 另一种说法，函数体以及函数所处的环境构成的总合体称为闭包
+</code></pre><h3 id="闭包的初级："><a href="#闭包的初级：" class="headerlink" title="闭包的初级："></a>闭包的初级：</h3><pre><code>　function f1(){
+　　　　n=999;
+　　　　function f2(){
+　　　　　　alert(n);
+　　　　}
+　　　　return f2;
+　　}
+　　var result=f1();
+　　result(); // 999
+</code></pre><h3 id="闭包的组成："><a href="#闭包的组成：" class="headerlink" title="闭包的组成："></a>闭包的组成：</h3><pre><code>1函数体  （函数自身代码）
+2环境  （函数的作用域）
+</code></pre><h3 id="闭包的作用："><a href="#闭包的作用：" class="headerlink" title="闭包的作用："></a>闭包的作用：</h3><pre><code>1.对函数内部的变量起到了保护的作用
+2.除了返回的函数以外，没有任何手段能够获取或者修改这个变量的值。
+</code></pre><h3 id="闭包的缺点"><a href="#闭包的缺点" class="headerlink" title="闭包的缺点"></a>闭包的缺点</h3><p>​       就是常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。</p>
+<p>​       <strong>要理解闭包。首先必须理解js的特殊的变量作用域，变量的作用域分为全局变量和局部变量</strong></p>
+<h3 id="作用域："><a href="#作用域：" class="headerlink" title="作用域："></a>作用域：</h3><p>​                一个变量在定义的时候就有了一个作用区域；<br>​                 不在任何函数内声明的变量（函数内省略var的也算全局）称作全局变量<br>​                  在函数内声明的变量具有函数作用域，属于局部变量</p>
+<h3 id="作用域链："><a href="#作用域链：" class="headerlink" title="作用域链："></a>作用域链：</h3><p>​                  多个函数嵌套，子域可以访问父域的变量，形成的链式结构；（如图）；</p>
+<h5 id="对于分析作用域的面试题："><a href="#对于分析作用域的面试题：" class="headerlink" title="对于分析作用域的面试题："></a>对于分析作用域的面试题：</h5><p>​                   只需要看函数是在哪个环境中创建的，而不管函数是在哪个环境中调用的</p>
+<p><strong>面试题</strong></p>
+<pre><code>var name = &quot;The Window&quot;;   
+　　var object = {   
+　　　　name : &quot;My Object&quot;,   
+　　　　getNameFunc : function(){   
+　　　　　　return function(){   
+　　　　　　　　return this.name;   
+　　　　　};   
+　　　　}   
+};   
+alert(object.getNameFunc()());  //The Window
+</code></pre><h2 id="闭包的运用"><a href="#闭包的运用" class="headerlink" title="闭包的运用"></a>闭包的运用</h2><h3 id="1-匿名函数自调用"><a href="#1-匿名函数自调用" class="headerlink" title="1.匿名函数自调用"></a>1.匿名函数自调用</h3><h3 id="2-实现封装-模块化代码"><a href="#2-实现封装-模块化代码" class="headerlink" title="2.实现封装/模块化代码"></a>2.实现封装/模块化代码</h3><pre><code>​      var person= function(){ 
+   //变量作用域为函数内部，外部无法访问 
+​         var name = &quot;default&quot;; 
+​         return { 
+​            getName : function(){ 
+​                return name; 
+​         }, 
+​         setName : function(newName){ 
+​              name = newName; 
+​         } 
+​       } 
+​     }();
+​    console.log(person.name);//直接访问，结果为undefined 
+​    console.log(person.getName()); //default 
+​    person.setName(&quot;jozo&quot;); 
+   console.log(person.getName()); //jozo
+</code></pre><h3 id="3-面向对象"><a href="#3-面向对象" class="headerlink" title="3.面向对象"></a>3.面向对象</h3><pre><code>   function Person(){ 
+   var name = &quot;default&quot;; 
+   return { 
+   getName : function(){ 
+   return name; 
+​     }, 
+   setName : function(newName){ 
+   name = newName; 
+​      } 
+​    } 
+  }; 
+  var person1= Person(); 
+  print(person1.getName()); 
+  john.setName(&quot;person1&quot;); 
+  print(person1.getName()); // person1 
+  var person2= Person(); 
+  print(person2.getName()); 
+  jack.setName(&quot;erson2&quot;); 
+  print(erson2.getName()); //person2
+</code></pre><h3 id="闭包内存问题的解释："><a href="#闭包内存问题的解释：" class="headerlink" title="闭包内存问题的解释："></a>闭包内存问题的解释：</h3><pre><code> function demo（）{
+   var arr = [];
+   for(var i = 0; i &lt; 10; i++){
+
+​    arr[i] = function(){ return i; }   
+
+  }
+
+​     return arr;
+
+}
+var arr = demo();
+arr(3)();
+</code></pre><p><strong>思路：通过for循环把需要返回的函数存到了一个数组中，和存到内存中一个性质；</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/18/演讲表/" data-id="cj59nnaxo0001zglzcasv9zxp" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/18/演讲表/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
